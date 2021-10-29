@@ -1,3 +1,6 @@
+Group.destroy_all
+Contact.destroy_all
+
 groups_ids = []
 groups_ids << Group.create(name: 'Client').id
 groups_ids << Group.create(name: 'Friend').id
