@@ -1,0 +1,20 @@
+ru:
+  activerecord:
+    models:
+      contact: "Контакт"
+      group: "Группа"
+    attributes:
+      contact:
+        name: 'Имя'
+        email: 'Email'
+        company: 'Компания'
+        address: 'Адрес'
+        phone: 'Телефон'
+        group_id: 'Группа'
+      group:
+        name: 'Название'
+  controllers:
+    contact:
+      created: 'Вы создали новый контакт'
+      error: 'Ошибка сохранения'
+
