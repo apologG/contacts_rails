@@ -26,6 +26,8 @@ gem 'faker', '~> 1.6', '>= 1.6.6'
 gem 'bootstrap-sass', '~> 3.4', '>= 3.4.1'
 gem 'sassc-rails', '>= 2.1.0'
 gem 'jquery-rails'
+gem 'kaminari', '~> 1.2', '>= 1.2.1'
+gem 'kaminari-i18n', '~> 0.5.0'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password

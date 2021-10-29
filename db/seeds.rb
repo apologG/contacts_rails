@@ -5,7 +5,7 @@ groups_ids = []
 groups_ids << Group.create(name: 'Client').id
 groups_ids << Group.create(name: 'Friend').id
 groups_ids << Group.create(name: 'Family').id
-20.times do |i|
+1000.times do |i|
     Contact.create(
           name: Faker::Name.name, 
           company: Faker::Company.name, 
