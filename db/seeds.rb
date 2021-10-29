@@ -2,10 +2,10 @@ Group.destroy_all
 Contact.destroy_all
 
 groups_ids = []
-groups_ids << Group.create(name: 'Client').id
-groups_ids << Group.create(name: 'Friend').id
-groups_ids << Group.create(name: 'Family').id
-1000.times do |i|
+groups_ids << Group.create(name: 'Клиенты').id
+groups_ids << Group.create(name: 'Друзья').id
+groups_ids << Group.create(name: 'Семья').id
+20.times do |i|
     Contact.create(
           name: Faker::Name.name, 
           company: Faker::Company.name, 
