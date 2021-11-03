@@ -12,9 +12,23 @@ ru:
         phone: 'Телефон'
         group_id: 'Группа'
       group:
-        name: 'Название'
+        name: 'Группа'
+    errors:
+      models:
+        contact:
+          attributes:
+            group:
+              required: 'Группа должна быть выбрана'
+            name:
+              too_short: 'Имя должно сожержать минимум 3 символа'
+              blank: 'Имя должно быть заполнено'
+            email:
+              blank: 'Email должен быть заполнен'
+            group_id:
+              blank: 'Группа не может быть пустой'
+
   controllers:
     contact:
       created: 'Вы создали новый контакт'
-      error: 'Ошибка сохранения'
+      error: 'Невозможно сохранить контакт'
 

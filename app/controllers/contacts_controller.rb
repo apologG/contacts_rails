@@ -1,5 +1,5 @@
 class ContactsController < ApplicationController
-
+  
   def index
     show_by_group
   end
@@ -15,7 +15,7 @@ class ContactsController < ApplicationController
       flash[:success] = I18n.t('controllers.contact.created')
       redirect_to root_path
     else
-      flash[:error] = I18n.t('controllers.contact.error')
+      # flash[:error] = I18n.t('controllers.contact.error')
       render :new
     end
   end
@@ -24,9 +24,9 @@ class ContactsController < ApplicationController
 
   def show_by_group
     if params[:group_id] && !params[:group_id].empty?
-      @contacts = Group.find(params[:group_id]).contacts.page(params[:page])
+      @contacts = Group.find(params[:group_id]).contacts.order(created_at: :desc).page(params[:page])
     else
-      @contacts = Contact.page(params[:page])
+      @contacts = Contact.order(created_at: :desc).page(params[:page])
     end
   end
 

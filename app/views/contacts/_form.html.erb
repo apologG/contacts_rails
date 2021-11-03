@@ -1,9 +1,25 @@
 <%= form_for(@contact) do |f| %>
   <div class="panel-body">
+    <% if @contact.errors.any? %> 
+    <div class="row">
+      <div class="col-md-12">
+        <div class="alert alert-danger">
+          <h3>Пожалуйста исправьте следующие формы:</h3>
+          <ul>
+            <% @contact.errors.messages.each_value do|message| %>
+            <li>
+              <%= message.join(', ') %>
+            </li>
+            <% end %>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <% end %>
+
     <div class="form-horizontal">
       <div class="row">
         <div class="col-md-8">
-
           <div class="form-group">
               <%= f.label :name, class:"control-label col-md-3"%>
             <div class="col-md-8">
