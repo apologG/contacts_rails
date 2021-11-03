@@ -1,4 +1,7 @@
 class ContactsController < ApplicationController
+
+  before_action :set_contact, only: [:edit, :update]
+  before_action :all_groups, only: [:new, :edit, :create]
   
   def index
     show_by_group
@@ -12,11 +15,23 @@ class ContactsController < ApplicationController
     @contact = Contact.new(contact_params)
 
     if @contact.save
-      flash[:success] = I18n.t('controllers.contact.created')
+      I18n.t('controllers.contact.created')
       redirect_to root_path
     else
       # flash[:error] = I18n.t('controllers.contact.error')
       render :new
+    end
+  end
+
+  def edit
+  end
+
+  def update
+    if @contact.update(contact_params)
+      flash[:success] = I18n.t('controllers.contact.updated')
+      redirect_to root_path
+    else
+      render :edit
     end
   end
 
@@ -34,4 +49,11 @@ class ContactsController < ApplicationController
     params.require(:contact).permit(:name, :address, :email, :company, :phone, :group_id)
   end
 
+  def set_contact
+    @contact = Contact.find(params[:id])
+  end
+
+  def all_groups
+    @groups = Group.all
+  end
 end
