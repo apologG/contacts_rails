@@ -26,10 +26,13 @@ ru:
               blank: 'Email должен быть заполнен'
             group_id:
               blank: 'Группа не может быть пустой'
-
   controllers:
     contact:
       created: 'Вы создали новый контакт'
       updated: 'Контакт обновлен'
+      destroyed: 'Контакт удален'
       error: 'Невозможно сохранить контакт'
+  contacts:
+    contact:
+      destroy_confirm: 'Вы уверены что хотите удалить контакт?'
 

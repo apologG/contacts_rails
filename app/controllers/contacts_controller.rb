@@ -1,6 +1,6 @@
 class ContactsController < ApplicationController
 
-  before_action :set_contact, only: %i(edit update)
+  before_action :set_contact, only: %i(edit update destroy)
   before_action :all_groups, only: [:new, :edit, :create]
   
   def index
@@ -28,12 +28,18 @@ class ContactsController < ApplicationController
 
   def update
     if @contact.update(contact_params)
-      flash[:success] = I18n.t('controllers.contact.updated')
+       I18n.t('controllers.contact.updated')
       redirect_to root_path
     else
       render :edit
     end
   end
+
+  def destroy
+    @contact.destroy
+    flash[:success] = I18n.t('controllers.contact.destroyed')
+    redirect_to root_path
+  end 
 
   private
 
