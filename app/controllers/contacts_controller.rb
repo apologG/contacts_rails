@@ -1,6 +1,6 @@
 class ContactsController < ApplicationController
 
-  before_action :set_contact, only: [:edit, :update]
+  before_action :set_contact, only: %i(edit update)
   before_action :all_groups, only: [:new, :edit, :create]
   
   def index
@@ -46,7 +46,7 @@ class ContactsController < ApplicationController
   end
 
   def contact_params
-    params.require(:contact).permit(:name, :address, :email, :company, :phone, :group_id)
+    params.require(:contact).permit(:name, :address, :email, :company, :phone, :group_id, :avatar)
   end
 
   def set_contact

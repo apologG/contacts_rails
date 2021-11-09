@@ -17,6 +17,8 @@ gem 'jquery-rails'
 gem 'kaminari', '~> 1.2', '>= 1.2.1'
 gem 'kaminari-i18n', '~> 0.5.0'
 gem 'faker', '~> 1.6', '>= 1.6.6' 
+gem 'paperclip', '~> 6.1'
+gem 'jasny-bootstrap-rails', '~> 3.1', '>= 3.1.3'
 
 gem 'bootsnap', '>= 1.1.0', require: false
 
