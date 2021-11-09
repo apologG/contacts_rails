@@ -54,7 +54,7 @@
           <div class="form-group">
             <%= f.label :group_id, class:"control-label col-md-3"%>
             <div class="col-md-5">
-              <%= f.collection_select :group_id, @groups, :id, :name, {promt: 'Выбор'}, class: 'form-control' %>
+              <%= f.collection_select :group_id, @groups, :id, :name, {prompt: '...'}, class: 'form-control' %>
               <%# <%= f.select :group_id, options_from_collection_for_select(@groups, :id, :name, selected: @contact.group_id), {include_blank: true}, {class: 'form-control'}%>
             </div>
             <div class="col-md-3">

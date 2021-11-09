@@ -4,7 +4,7 @@ class ContactsController < ApplicationController
   before_action :all_groups, only: [:new, :edit, :create]
   
   def index
-    show_by_group
+    @contacts = Contact.by_group(params[:group_id]).search(params[:term]).order(created_at: :desc).page(params[:page])
   end
 
   def new
@@ -43,14 +43,6 @@ class ContactsController < ApplicationController
 
   private
 
-  def show_by_group
-    if params[:group_id] && !params[:group_id].empty?
-      @contacts = Group.find(params[:group_id]).contacts.order(created_at: :desc).page(params[:page])
-    else
-      @contacts = Contact.order(created_at: :desc).page(params[:page])
-    end
-  end
-
   def contact_params
     params.require(:contact).permit(:name, :address, :email, :company, :phone, :group_id, :avatar)
   end
@@ -58,8 +50,9 @@ class ContactsController < ApplicationController
   def set_contact
     @contact = Contact.find(params[:id])
   end
-
+ 
   def all_groups
     @groups = Group.all
   end
+
 end

@@ -7,11 +7,10 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-
     <%= link_to 'Мои контакты', root_path, class: 'navbar-brand text-uppercase' %>
     </div>
-    <!-- /.navbar-header -->
     <div class="collapse navbar-collapse" id="navbar-collapse">
+      <%= render 'layouts/search_form' %>
       <div class="nav navbar-right navbar-btn">
         <%= link_to new_contact_path, class:"btn btn-default" do %>
           <i class="glyphicon glyphicon-plus"></i> 
