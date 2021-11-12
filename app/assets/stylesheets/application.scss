@@ -13,6 +13,7 @@
  *= require_tree .
  *= require jasny-bootstrap.min
  *= require_self
+ *= require jquery-ui
  */
  @import "bootstrap-sprockets";
  @import "bootstrap";
@@ -72,4 +73,11 @@
    font-size: 12px;
    line-height: 1.428571429;
    border-radius: 15px;
+ }
+ 
+ .ui-autocomplete {
+   position: relative;
+   cursor: default;
+   z-index: 9999 !important;
+   width: 196px;
  }

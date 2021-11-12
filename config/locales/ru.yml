@@ -26,6 +26,11 @@ ru:
               blank: 'Email должен быть заполнен'
             group_id:
               blank: 'Группа не может быть пустой'
+        group:
+          attributes:
+            name:
+              blank: 'не может быть пустой'
+
   controllers:
     contact:
       created: 'Вы создали новый контакт'
