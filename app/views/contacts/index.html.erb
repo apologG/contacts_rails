@@ -5,6 +5,17 @@
 <% end %>
 
 <div class="panel panel-default">
+  <div class="panel-heading clearfix">
+      <div class="pull-left">
+        <h4>Контакты</h4>
+      </div>
+      <div class="pull-right">
+        <%= link_to new_contact_path, class:"btn btn-success" do %>
+          <i class="glyphicon glyphicon-plus"></i> 
+          Добавить
+        <% end %>
+      </div>
+  </div>
   <table class="table">
     <%= render @contacts %>
   </table>            
