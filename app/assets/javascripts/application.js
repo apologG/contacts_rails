@@ -20,7 +20,7 @@
 //= require jquery-ui
 
 
-$(function () {
+$( document ).on('turbolinks:load', function() {
   $('#term').autocomplete({
     source: "/contacts/autocomplete",
     minLength: 3,  
@@ -52,8 +52,20 @@ $( document ).on('turbolinks:load', function() {
 					data: {
 							group: { name: $('#new_group').val() }
 					},
-					success: function (response) {
-						console.log(response)
+					success: function (group) {
+            if(group.id!= null) {
+              inputGroup.removeClass("has-error")
+              inputGroup.next('.text-danger').remove()
+
+              let newOption = $('<option />')
+                                  .attr('value', group.id)
+                                  .attr('selected', true)
+                                  .text(group.name)
+
+              $('#contact_group_id').append(newOption)
+
+              newGroup.val('')
+            }
 					},
 					error: function (xhr) {
 						let errors = xhr.responseJSON;

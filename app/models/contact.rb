@@ -10,7 +10,7 @@ class Contact < ApplicationRecord
   validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\z/
 
   scope :search, -> (term) {
-      where('LOWER(name) LIKE :term or LOWER(company) LIKE :term or LOWER(email) LIKE :term', term: "%#{term.downcase.capitalize}%") if term.present?
+      where('LOWER(name) LIKE :term or LOWER(company) LIKE :term or LOWER(email) LIKE :term', term: "%#{term.split(' ').map{|word|word.capitalize}.join(' ')}%") if term.present?
   }
   scope :by_group, -> (group_id) { where(group_id: group_id) if group_id.present? }
 

@@ -30,6 +30,7 @@ ru:
           attributes:
             name:
               blank: 'не может быть пустой'
+              taken: 'уже существует'
 
   controllers:
     contact:
