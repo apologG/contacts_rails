@@ -20,6 +20,8 @@ gem 'faker', '~> 1.6', '>= 1.6.6'
 gem 'paperclip', '~> 6.1'
 gem 'jasny-bootstrap-rails', '~> 3.1', '>= 3.1.3'
 gem 'jquery-ui-rails', '~> 6.0', '>= 6.0.1'
+gem 'devise', '~> 4.8'
+gem 'devise-i18n'
 
 gem 'bootsnap', '>= 1.1.0', require: false
 
