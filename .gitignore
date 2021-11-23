@@ -6,6 +6,7 @@
 
 # Ignore bundler config.
 /.bundle
+/.idea
 
 # Ignore the default SQLite database.
 /db/*.sqlite3
@@ -20,7 +21,6 @@
 # Ignore uploaded files in development
 /storage/*
 !/storage/.keep
-/public/images
 /public/system
 
 /node_modules

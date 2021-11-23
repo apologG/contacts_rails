@@ -1,27 +1,27 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Мои контакты</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+<head>
+  <title>Мои контакты</title>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
 
-  <body>
-    <%= render 'layouts/navbar' %>
-    <div class="container">
-      <div class="row">
-        <div class="col-md-3">
-            <%= render 'layouts/sidebar' %>
-        </div>
-        <div class="col-md-9">
-          <%# < class="notice"><%= notice %>
-          <%# <p class="alert"><%= alert %>
-          <%= render 'layouts/messages' if !flash.empty? %>
-          <%= yield %>
-        </div>
-      </div>
+<body>
+<%= render 'layouts/navbar' %>
+<div class="container">
+  <div class="row">
+    <div class="col-md-3">
+      <%= render 'layouts/sidebar' %>
     </div>
-  </body>
+    <div class="col-md-9">
+      <%# < class="notice"><%= notice %>
+      <%# <p class="alert"><%= alert %>
+      <%= render 'layouts/messages' if !flash.empty? %>
+      <%= yield %>
+    </div>
+  </div>
+</div>
+</body>
 </html>

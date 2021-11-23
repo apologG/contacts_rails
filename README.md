@@ -1,24 +1,14 @@
-# README
+#Rails 5 Build Ajax web application from scratch
+Для приложения использовались следующие версии:
+- Ruby v. 2.6.6
+- Rails v.5.2.6
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+---
+Для запуска приложения выполнить следующие команды в терминале:
+(должен быть установлен NodeJS)
+- bundle install (установить необходимые гемы и зависимости)
+- rake db:migrate && rake db:seed (выполнить миграции и заполнить БД)
+- bundle exec rails s (запуск сервера, http://localhost:3000)
 
-Things you may want to cover:
 
-* Ruby version
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...

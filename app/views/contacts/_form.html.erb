@@ -1,60 +1,60 @@
-<%= form_for(@contact, html: {multipart: true}) do |f| %>
+<%= form_for(@contact, html: { multipart: true }) do |f| %>
   <div class="panel-body">
-    <% if @contact.errors.any? %> 
-    <div class="row">
-      <div class="col-md-12">
-        <div class="alert alert-danger">
-          <h3>Пожалуйста исправьте следующие формы:</h3>
-          <ul>
-            <% @contact.errors.messages.each_value do|message| %>
-            <li>
-              <%= message.join(', ') %>
-            </li>
-            <% end %>
-          </ul>
+    <% if @contact.errors.any? %>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="alert alert-danger">
+            <h3>Пожалуйста исправьте следующие формы:</h3>
+            <ul>
+              <% @contact.errors.messages.each_value do |message| %>
+                <li>
+                  <%= message.join(', ') %>
+                </li>
+              <% end %>
+            </ul>
+          </div>
         </div>
       </div>
-    </div>
     <% end %>
 
     <div class="form-horizontal">
       <div class="row">
         <div class="col-md-8">
           <div class="form-group">
-              <%= f.label :name, class:"control-label col-md-3"%>
+            <%= f.label :name, class: "control-label col-md-3" %>
             <div class="col-md-8">
               <%= f.text_field :name, class: 'form-control' %>
             </div>
           </div>
           <div class="form-group">
-              <%= f.label :company, class:"control-label col-md-3"%>
+            <%= f.label :company, class: "control-label col-md-3" %>
             <div class="col-md-8">
               <%= f.text_field :company, class: 'form-control' %>
             </div>
           </div>
           <div class="form-group">
-              <%= f.label :email, class:"control-label col-md-3"%>
+            <%= f.label :email, class: "control-label col-md-3" %>
             <div class="col-md-8">
               <%= f.text_field :email, class: 'form-control' %>
             </div>
           </div>
           <div class="form-group">
-              <%= f.label :phone, class:"control-label col-md-3"%>
+            <%= f.label :phone, class: "control-label col-md-3" %>
             <div class="col-md-8">
-              <%= f.text_field :phone, class:'form-control' %>
+              <%= f.text_field :phone, class: 'form-control' %>
             </div>
           </div>
           <div class="form-group">
-              <%= f.label :address, class:"control-label col-md-3"%>
+            <%= f.label :address, class: "control-label col-md-3" %>
             <div class="col-md-8">
-              <%= f.text_field :address, class:'form-control' %>
+              <%= f.text_field :address, class: 'form-control' %>
             </div>
           </div>
-         
+
           <div class="form-group">
-            <%= f.label :group_id, class:"control-label col-md-3"%>
+            <%= f.label :group_id, class: "control-label col-md-3" %>
             <div class="col-md-5">
-              <%= f.collection_select :group_id, @groups, :id, :name, {prompt: '...'}, class: 'form-control' %>
+              <%= f.collection_select :group_id, @groups, :id, :name, { prompt: '...' }, class: 'form-control' %>
               <%# <%= f.select :group_id, options_from_collection_for_select(@groups, :id, :name, selected: @contact.group_id), {include_blank: true}, {class: 'form-control'}%>
             </div>
             <div class="col-md-3">
@@ -75,16 +75,16 @@
           </div>
         </div>
         <div class="col-md-4">
-            <div class="fileinput fileinput-new" data-provides="fileinput">
-              <div class="fileinput-new thumbnail" style="width: 150px; height: 150px;">                
-                <%= image_tag @contact.avatar.url(:medium) %>
-              </div>
-              <div class="fileinput-preview fileinput-exists thumbnail" style="max-width: 200px; max-height: 150px;"></div>
-              <div class="text-center">
-                <span class="btn btn-default btn-file"><span class="fileinput-new">Выберите фото</span><span class="fileinput-exists">Выберите фото</span><%= f.file_field :avatar %></span>
-                <a href="#" class="btn btn-default fileinput-exists" data-dismiss="fileinput">Удалить</a>
-              </div>
+          <div class="fileinput fileinput-new" data-provides="fileinput">
+            <div class="fileinput-new thumbnail" style="width: 150px; height: 150px;">
+              <%= image_tag @contact.avatar.url(:medium) %>
             </div>
+            <div class="fileinput-preview fileinput-exists thumbnail" style="max-width: 200px; max-height: 150px;"></div>
+            <div class="text-center">
+              <span class="btn btn-default btn-file"><span class="fileinput-new">Выберите фото</span><span class="fileinput-exists">Выберите фото</span><%= f.file_field :avatar %></span>
+              <a href="#" class="btn btn-default fileinput-exists" data-dismiss="fileinput">Удалить</a>
+            </div>
+          </div>
         </div>
       </div>
     </div>
